@@ -37,4 +37,6 @@ dependencies {
 
     implementation(Libraries.Dagger.core)
     kapt(Libraries.Dagger.compiler)
+
+    implementation(Libraries.Gson.core)
 }
