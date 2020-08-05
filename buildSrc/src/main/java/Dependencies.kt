@@ -11,6 +11,8 @@ object BuildTypes {
 object Modules {
     const val app = ":app"
     const val buildSrc = ":buildSrc"
+    const val cvModels = ":cvModels"
+    const val cvApi = ":cvApi"
 }
 
 object ReleaseVersions {

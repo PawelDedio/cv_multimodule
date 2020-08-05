@@ -1,7 +1,4 @@
-import com.android.build.gradle.internal.dsl.DefaultConfig
-import com.android.build.gradle.internal.dsl.ProductFlavor
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.util.Hashtable
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -37,8 +34,9 @@ android {
         }
     }
 
-    dynamicFeatures =
-        mutableSetOf()
+    dynamicFeatures = mutableSetOf(
+        Modules.cvApi, ":cvModels"
+    )
 
     testOptions {
         unitTests.apply {
@@ -66,7 +64,7 @@ android {
 
         getByName(BuildTypes.release) {
             isMinifyEnabled = true
-            isShrinkResources = true
+            isShrinkResources = false
 
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
