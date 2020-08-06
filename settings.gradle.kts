@@ -1,7 +1,8 @@
-include(":cvModels")
 include(
     ":app",
-    ":cvApi"
+    ":cvApi",
+    ":cvModels",
+    ":home"
 )
 
 rootProject.name = "CV multimodule"

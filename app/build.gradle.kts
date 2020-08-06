@@ -38,7 +38,9 @@ android {
     }
 
     dynamicFeatures = mutableSetOf(
-        Modules.cvApi, ":cvModels"
+        Modules.cvModels,
+        Modules.cvApi,
+        Modules.home
     )
 
     testOptions {
