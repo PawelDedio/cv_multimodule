@@ -1,6 +1,9 @@
+object ExtVariables {
+    const val allConfig = "allConfig"
+}
+
 object ApplicationConfig {
     const val id = "pl.dedio.cvmultimodule"
-    const val projectName = "CV multimodule"
 }
 
 object BuildTypes {

@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.android.build.gradle.internal.dsl.DefaultConfig
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -23,6 +24,8 @@ android {
         versionName = ReleaseVersions.versionName
 
         vectorDrawables.useSupportLibrary = true
+
+        configureFlavorsConfig(ExtVariables.allConfig)
     }
 
     compileOptions {
@@ -120,4 +123,16 @@ dependencies {
     testImplementation(Libraries.Kotlin.reflect)
     testImplementation(Libraries.Coroutines.test)
     testImplementation(Libraries.Mockk.core)
+}
+
+fun DefaultConfig.configureFlavorsConfig(variableName: String) {
+    // Add config properties as build configs
+    val configMap = rootProject.ext.get(variableName) as java.util.Hashtable<String, String>
+    for ((key: String, value: String) in configMap) {
+        if (value.startsWith("\"")) {
+            buildConfigField("String", key, value)
+        } else {
+            buildConfigField("Integer", key, value)
+        }
+    }
 }

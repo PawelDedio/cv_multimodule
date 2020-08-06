@@ -51,3 +51,16 @@ tasks.withType<Detekt> {
 tasks.register("clean").configure {
     delete("build")
 }
+
+ext {
+    val allConfig = loadProperties("config/allFlavors.properties")
+    set(ExtVariables.allConfig, allConfig)
+}
+
+fun loadProperties(path: String): java.util.Properties {
+    val stream = java.io.FileInputStream(path)
+    val properties = java.util.Properties()
+    properties.load(stream)
+
+    return properties
+}
