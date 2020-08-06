@@ -4,6 +4,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
+import org.threeten.bp.LocalDate
 
 @Parcelize
 data class Experience(@SerializedName("companies") val companies: List<Company>) :
@@ -17,8 +18,8 @@ data class Experience(@SerializedName("companies") val companies: List<Company>)
 data class Company(
     @SerializedName("name") val name: String,
     @SerializedName("company_logo_url") val companyLogoUrl: String,
-    @SerializedName("started_at") val startedAt: String,
-    @SerializedName("finished_at") val finishedAt: String?,
+    @SerializedName("started_at") val startedAt: LocalDate,
+    @SerializedName("finished_at") val finishedAt: LocalDate?,
     @SerializedName("position_name") val positionName: String,
     @SerializedName("projects") val projects: List<Project>
 ) : Parcelable
