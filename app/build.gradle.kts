@@ -51,14 +51,14 @@ android {
         getByName(BuildTypes.debug) {
             storeFile = file("default_key.jks")
             storePassword = "testkeypassword"
-            keyAlias = "testkeynotforrelease"
-            keyPassword = "spyrosofttestkey"
+            keyAlias = "testkey"
+            keyPassword = "testkeypassword"
         }
         create(BuildTypes.release) {
             storeFile = file("default_key.jks")
             storePassword = "testkeypassword"
-            keyAlias = "testkeynotforrelease"
-            keyPassword = "spyrosofttestkey"
+            keyAlias = "testkey"
+            keyPassword = "testkeypassword"
         }
     }
 
@@ -115,6 +115,8 @@ dependencies {
     kapt(Libraries.Glide.compiler)
 
     api(Libraries.Glide.core)
+
+    implementation(Libraries.ThreeTenABP.core)
 
     debugImplementation(Libraries.LeakCanary.core)
 

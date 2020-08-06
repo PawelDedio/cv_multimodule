@@ -48,6 +48,7 @@ dependencies {
     api(Libraries.Retrofit.converter)
 
     implementation(Libraries.Gson.core)
+    implementation(Libraries.Gson.extras)
 
     implementation(Libraries.Timber.core)
 }
