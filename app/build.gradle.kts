@@ -49,13 +49,13 @@ android {
 
     signingConfigs {
         getByName(BuildTypes.debug) {
-            storeFile = file("keystore.jks")
-            storePassword = "spyrosofttestkey"
-            keyAlias = "testkey"
+            storeFile = file("default_key.jks")
+            storePassword = "testkeypassword"
+            keyAlias = "testkeynotforrelease"
             keyPassword = "spyrosofttestkey"
         }
         create(BuildTypes.release) {
-            storeFile = file("keystore.jks")
+            storeFile = file("default_key.jks")
             storePassword = "testkeypassword"
             keyAlias = "testkeynotforrelease"
             keyPassword = "spyrosofttestkey"
