@@ -6,14 +6,14 @@ import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Skills(@SerializedName("skills") val skills: List<Skill>) : BaseBlock() {
+data class Languages(@SerializedName("languages") val languages: List<Language>) : BaseBlock() {
 
     @IgnoredOnParcel
-    override val blockType = BlockType.SKILLS
+    override val blockType = BlockType.LANGUAGES
 }
 
 @Parcelize
-data class Skill(
+data class Language(
     @SerializedName("name") val name: String,
     @SerializedName("level") val level: Float
 ) : Parcelable

@@ -6,7 +6,8 @@ import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ExperienceBlock(@SerializedName("companies") val companies: List<Company>) : BaseBlock() {
+data class Experience(@SerializedName("companies") val companies: List<Company>) :
+    BaseBlock() {
 
     @IgnoredOnParcel
     override val blockType = BlockType.EXPERIENCE

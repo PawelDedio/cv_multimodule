@@ -6,10 +6,11 @@ import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ProgrammingLanguages(@SerializedName("programming_languages") val programmingLanguages: List<ProgrammingLanguage>) : BaseBlock() {
+data class ProgrammingLanguages(@SerializedName("programming_languages") val programmingLanguages: List<ProgrammingLanguage>) :
+    BaseBlock() {
+
     @IgnoredOnParcel
-    override val blockType =
-        BlockType.PROGRAMMING_LANGUAGES
+    override val blockType = BlockType.PROGRAMMING_LANGUAGES
 }
 
 @Parcelize

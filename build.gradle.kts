@@ -1,15 +1,10 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektPlugin
 import io.gitlab.arturbosch.detekt.detekt
-import java.io.FileInputStream
-import java.util.regex.Pattern
-import java.util.Properties
-import java.net.URI
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    val kotlin_version by extra("1.3.72")
     repositories {
         google()
         jcenter()
@@ -21,7 +16,6 @@ buildscript {
         classpath(ClassPathDependencies.kotlinGradle)
         classpath(ClassPathDependencies.junit)
         classpath(ClassPathDependencies.navigationSafeArgs)
-        "classpath"("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
@@ -34,6 +28,7 @@ allprojects {
         google()
         jcenter()
         maven(url = "https://jitpack.io")
+        maven(url = Libraries.Gson.mavenUrl)
     }
 }
 

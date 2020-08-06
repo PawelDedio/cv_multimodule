@@ -39,4 +39,7 @@ dependencies {
     kapt(Libraries.Dagger.compiler)
 
     implementation(Libraries.Gson.core)
+    implementation(Libraries.Gson.extras)
+
+    implementation(Libraries.ThreeTenABP.core)
 }

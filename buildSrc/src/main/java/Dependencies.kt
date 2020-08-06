@@ -81,9 +81,13 @@ object Libraries {
     object Gson {
         object Versions {
             const val gson = "2.8.6"
+            const val extras = "2.8.5"
         }
 
+        const val mavenUrl = "https://artifactory.cronapp.io/public-release/"
+
         const val core = "com.google.code.gson:gson:${Versions.gson}"
+        const val extras = "com.google.code.gson:gson-extras:${Versions.extras}"
     }
 
     //https://github.com/mockk/mockk mocking library for Kotlin
@@ -242,5 +246,14 @@ object Libraries {
 
         const val mavenUrl = "http://storage.googleapis.com/r8-releases/raw"
         const val core = "com.android.tools:r8:${Versions.r8}"
+    }
+
+    //https://github.com/JakeWharton/ThreeTenABP An adaptation of the JSR-310 backport for Android.
+    object ThreeTenABP {
+        object Versions {
+            const val threeTenAbp = "1.2.4"
+        }
+
+        const val core = "com.jakewharton.threetenabp:threetenabp:${Versions.threeTenAbp}"
     }
 }
