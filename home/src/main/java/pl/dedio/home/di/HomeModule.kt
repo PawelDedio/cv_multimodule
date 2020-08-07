@@ -1,27 +1,25 @@
-package pl.dedio.cvmultimodule.di.modules
+package pl.dedio.home.di
 
-import android.content.Context
 import dagger.Module
 import dagger.Provides
-import pl.dedio.cvmultimodule.MainApplication
+import dagger.multibindings.IntoMap
 import pl.dedio.cvmultimodule.base.BaseViewModel
+import pl.dedio.cvmultimodule.di.annotations.ViewModelKey
+import pl.dedio.cvmultimodule.di.scopes.FeatureScope
 import pl.dedio.cvmultimodule.util.ViewModelFactory
+import pl.dedio.home.HomeViewModel
 import javax.inject.Provider
-import javax.inject.Singleton
 
 @Module
-class ApplicationModule(private val application: MainApplication) {
+class HomeModule {
 
     @Provides
-    @Singleton
-    fun provideContext(): Context = application.baseContext
+    @IntoMap
+    @ViewModelKey(HomeViewModel::class)
+    fun providesHomeViewModel(viewModel: HomeViewModel) = viewModel as BaseViewModel
 
     @Provides
-    @Singleton
-    fun provideMainApplication() = application
-
-    @Provides
-    @Singleton
+    @FeatureScope
     fun providesViewModelFactory(
         creators: Map<Class<out BaseViewModel>,
                 @JvmSuppressWildcards Provider<BaseViewModel>>

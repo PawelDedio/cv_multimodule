@@ -8,6 +8,8 @@ plugins {
 android {
     compileSdkVersion(AndroidVersions.compileSdk)
 
+    buildFeatures.dataBinding = true
+
     defaultConfig {
         minSdkVersion(AndroidVersions.minSdk)
         targetSdkVersion(AndroidVersions.targetSdk)
@@ -32,6 +34,7 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(Modules.app))
+    implementation(project(Modules.cvApi))
 
     implementation(Libraries.Kotlin.core)
 

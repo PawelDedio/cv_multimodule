@@ -16,7 +16,7 @@ object Modules {
     const val buildSrc = ":buildSrc"
     const val cvModels = ":cvModels"
     const val cvApi = ":cvApi"
-    const val home = ":cvApi"
+    const val home = ":home"
 }
 
 object ReleaseVersions {

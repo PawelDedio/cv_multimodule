@@ -51,4 +51,10 @@ class NetworkModule {
         okHttpClient: OkHttpClient
     ): Retrofit.Builder = Retrofit.Builder()
         .client(okHttpClient)
+
+    @Provides
+    @Singleton
+    fun providesHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
+        level = HttpLoggingInterceptor.Level.BODY
+    }
 }

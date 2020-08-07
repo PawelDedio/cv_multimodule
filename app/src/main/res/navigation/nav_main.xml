@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainNavHostFragment"
+    app:startDestination="@id/homeGraph">
+
+    <include-dynamic
+        android:id="@+id/homeGraph"
+        app:graphPackage="pl.dedio.cvmultimodule.home"
+        app:graphResName="nav_home"
+        app:moduleName="home" />
+</navigation>
