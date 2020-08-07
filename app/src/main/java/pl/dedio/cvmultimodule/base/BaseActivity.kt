@@ -5,8 +5,13 @@ import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import pl.dedio.cvmultimodule.di.Injector
 import pl.dedio.cvmultimodule.di.components.ActivityComponent
+import pl.dedio.cvmultimodule.util.ViewModelFactory
+import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
 
     val activityComponent: ActivityComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         Injector.getInstance(this).activityComponent

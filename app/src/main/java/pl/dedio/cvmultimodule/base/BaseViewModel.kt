@@ -1,4 +1,6 @@
 package pl.dedio.cvmultimodule.base
 
-class BaseViewModel {
-}
+import androidx.lifecycle.AndroidViewModel
+import pl.dedio.cvmultimodule.MainApplication
+
+class BaseViewModel(application: MainApplication) : AndroidViewModel(application)
