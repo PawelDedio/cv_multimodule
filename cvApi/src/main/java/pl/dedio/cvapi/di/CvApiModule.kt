@@ -26,6 +26,7 @@ class CvApiModule {
 
     @Provides
     @FeatureScope
+    @Named("cvApi")
     fun providesGsonConverterFactory(gson: Gson): GsonConverterFactory =
         GsonConverterFactory.create(gson)
 
@@ -33,8 +34,8 @@ class CvApiModule {
     @FeatureScope
     fun providesCvApi(
         builder: Retrofit.Builder,
-        @Named("StoryApi") gsonConverterFactory: GsonConverterFactory,
-        @Named("StoryApi") client: OkHttpClient
+        @Named("cvApi") gsonConverterFactory: GsonConverterFactory,
+        client: OkHttpClient
     ): CvApi {
         val retrofit = builder.baseUrl(BuildConfig.CV_API_URL)
             .client(client)

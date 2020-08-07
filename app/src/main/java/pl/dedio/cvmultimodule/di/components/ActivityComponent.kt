@@ -9,6 +9,7 @@ import pl.dedio.cvmultimodule.base.BaseActivity
 import pl.dedio.cvmultimodule.main.MainActivity
 import pl.dedio.cvmultimodule.di.modules.ActivityModule
 import pl.dedio.cvmultimodule.di.scopes.ActivityScope
+import pl.dedio.cvmultimodule.util.ResourceRepository
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -33,4 +34,6 @@ interface ActivityComponent {
     val gsonConverterFactory: GsonConverterFactory
 
     val baseActivity: BaseActivity
+
+    val resourceRepository: ResourceRepository
 }

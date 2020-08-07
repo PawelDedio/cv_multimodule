@@ -16,6 +16,6 @@ class DateFormatter @Inject constructor() {
     }
 
     companion object {
-        private const val API_DATE_FORMAT = "yyyy.MM.dd"
+        private const val API_DATE_FORMAT = "dd.MM.yyyy"
     }
 }
