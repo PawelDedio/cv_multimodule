@@ -10,4 +10,8 @@
     <style name="RootLayout">
         <item name="android:background">@color/mainBackground</item>
     </style>
+
+    <style name="RootLayout.Cell">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>
