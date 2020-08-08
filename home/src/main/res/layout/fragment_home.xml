@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
         <variable
@@ -9,10 +10,29 @@
             type="pl.dedio.home.HomeViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         style="@style/RootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/ProfileImage"
+                    imageUrl="@{viewModel.cvData.photoUrl}"
+                    android:layout_gravity="top|center_horizontal"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.9" />
+
+                //Profile information
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

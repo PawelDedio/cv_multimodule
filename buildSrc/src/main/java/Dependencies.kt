@@ -260,4 +260,13 @@ object Libraries {
 
         const val core = "com.jakewharton.threetenabp:threetenabp:${Versions.threeTenAbp}"
     }
+
+    //https://github.com/hdodenhof/CircleImageView Circle image view
+    object CircleImageView {
+        object Versions {
+            const val circleImageView = "3.1.0"
+        }
+
+        const val core = "de.hdodenhof:circleimageview:${Versions.circleImageView}"
+    }
 }

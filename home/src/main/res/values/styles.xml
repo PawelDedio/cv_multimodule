@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Image Views -->
+    <style name="ImageCircleDefault">
+        <item name="civ_border_width">@dimen/image_circle_border_default</item>
+        <item name="civ_border_color">@color/neutral</item>
+    </style>
+
+    <style name="ProfileImage">
+        <item name="android:layout_width">@dimen/profile_image_size</item>
+        <item name="android:layout_height">@dimen/profile_image_size</item>
+    </style>
+</resources>

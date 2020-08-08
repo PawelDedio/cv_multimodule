@@ -58,4 +58,6 @@ dependencies {
     implementation(Libraries.Gson.extras)
 
     implementation(Libraries.ThreeTenABP.core)
+
+    implementation(Libraries.CircleImageView.core)
 }
