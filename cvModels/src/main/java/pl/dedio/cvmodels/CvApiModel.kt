@@ -6,6 +6,6 @@ import pl.dedio.cvmodels.blocks.BaseBlock
 
 data class CvApiModel(
     @SerializedName("name") val name: String,
-    @SerializedName("photoUrl") val photoUrl: String,
+    @SerializedName("photo_url") val photoUrl: String,
     @SerializedName("blocks") val blocks: List<BaseBlock>
 )

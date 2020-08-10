@@ -9,7 +9,8 @@ import kotlinx.android.parcel.Parcelize
 data class Languages(@SerializedName("languages") val languages: List<Language>) : BaseBlock() {
 
     @IgnoredOnParcel
-    override val blockType = BlockType.LANGUAGES
+    override val blockType
+        get() = BlockType.LANGUAGES
 }
 
 @Parcelize

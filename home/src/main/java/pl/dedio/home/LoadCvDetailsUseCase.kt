@@ -15,7 +15,7 @@ class LoadCvDetailsUseCase @Inject constructor(
 
     override suspend fun execute(params: Params): CvUiModel {
         return with(params) {
-            val apiModel = cvApi.getCvDetails(userName, gistId, gistRawId, gistName).extractModel()
+            val apiModel = cvApi.getCvDetails(userName, gistId, gistName).extractModel()
 
             cvModelMapper.mapToUiModel(apiModel)
         }
@@ -24,7 +24,6 @@ class LoadCvDetailsUseCase @Inject constructor(
     data class Params(
         val userName: String,
         val gistId: String,
-        val gistRawId: String,
         val gistName: String
     )
 }

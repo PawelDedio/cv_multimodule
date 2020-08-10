@@ -13,7 +13,8 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         style="@style/RootLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/lightGrey">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -21,18 +22,96 @@
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/spacing_small"
+                app:contentScrim="@color/primary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/homeProfileImage"
                     style="@style/ProfileImage"
-                    imageUrl="@{viewModel.cvData.photoUrl}"
                     android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    app:imageUrl="@{viewModel.cvData.photoUrl}"
                     app:layout_collapseMode="parallax"
                     app:layout_collapseParallaxMultiplier="0.9" />
 
-                //Profile information
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginTop="@dimen/home_name_margin_top"
+                    android:background="@color/primary"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/spacing_small"
+                    android:paddingBottom="@dimen/spacing_small"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.3">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/homeProfileName"
+                        style="@style/TextNeutral.ToolbarTitle"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@{viewModel.cvData.name}"
+                        tools:text="John Test" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/homeProfilePosition"
+                        style="@style/TextNeutral.SectionHeader"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/spacing_xsmall"
+                        android:text="@{viewModel.cvData.currentPosition}"
+                        app:visibleElseGone="@{viewModel.cvData.hasCurrentPosition()}"
+                        tools:text="Android Developer at Test Company" />
+                </LinearLayout>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/homeToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentInsetStart="0dp"
+                android:contentInsetLeft="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/homeToolbarToolbarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/homeToolbarImage"
+                        style="@style/ImageCircleDefault"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_xxxsmall"
+                        app:imageUrl="@{viewModel.cvData.photoUrl}"
+                        app:layout_constraintBottom_toBottomOf="@id/homeToolbarTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/homeToolbarTitle" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/homeToolbarTitle"
+                        style="@style/TextNeutral.ToolbarTitle"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:layout_marginEnd="@dimen/spacing_medium"
+                        android:text="@{viewModel.cvData.name}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/homeToolbarImage"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeRecycler"
+            style="@style/RecyclerDefault"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

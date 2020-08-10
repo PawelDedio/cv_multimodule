@@ -11,7 +11,8 @@ data class Experience(@SerializedName("companies") val companies: List<Company>)
     BaseBlock() {
 
     @IgnoredOnParcel
-    override val blockType = BlockType.EXPERIENCE
+    override val blockType
+        get() = BlockType.EXPERIENCE
 }
 
 @Parcelize
@@ -27,7 +28,7 @@ data class Company(
 @Parcelize
 data class Project(
     @SerializedName("name") val name: String,
-    @SerializedName("description") val description: String,
+    @SerializedName("description") val description: String?,
     @SerializedName("role") val role: String,
     @SerializedName("google_play_url") val googlePlayUrl: String?
 ) : Parcelable

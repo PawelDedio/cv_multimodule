@@ -19,6 +19,8 @@ class HomeAdapter @Inject constructor() : DataBindingAdapter<CvBlockListElement>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBindingViewHolder {
         val holder =  super.onCreateViewHolder(parent, viewType)
         holder.bind(BR.adapter, homeAdapterProvider?.get())
+
+        return holder
     }
 }
 

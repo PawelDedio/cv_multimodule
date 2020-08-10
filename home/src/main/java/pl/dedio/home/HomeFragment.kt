@@ -4,16 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_home.*
 import pl.dedio.cvmultimodule.base.BaseFragment
 import pl.dedio.cvmultimodule.di.components.ActivityComponent
 import pl.dedio.cvmultimodule.extension.getBinding
 import pl.dedio.cvmultimodule.extension.getViewModel
 import pl.dedio.home.databinding.FragmentHomeBinding
 import pl.dedio.home.di.DaggerHomeComponent
+import javax.inject.Inject
+import javax.inject.Provider
 
 class HomeFragment : BaseFragment() {
 
     lateinit var viewModel: HomeViewModel
+
+    @Inject
+    lateinit var adapterProvider: Provider<HomeAdapter>
+    lateinit var adapter: HomeAdapter
 
     override fun makeInject(component: ActivityComponent) {
         DaggerHomeComponent.factory().create(component).inject(this)
@@ -34,5 +41,21 @@ class HomeFragment : BaseFragment() {
             inflater = inflater, container = container
         )
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.cvBlocks.observe {
+            if(homeRecycler.adapter == null) {
+                adapter = adapterProvider.get().apply {
+                    homeAdapterProvider = adapterProvider
+                }
+
+                homeRecycler.adapter = adapter
+            }
+
+            adapter.submitList(it)
+        }
     }
 }

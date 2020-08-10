@@ -8,7 +8,7 @@
     </style>
 
     <style name="ProfileImage">
-        <item name="android:layout_width">@dimen/profile_image_size</item>
-        <item name="android:layout_height">@dimen/profile_image_size</item>
+        <item name="android:layout_width">@dimen/home_profile_image_size</item>
+        <item name="android:layout_height">@dimen/home_profile_image_size</item>
     </style>
 </resources>

@@ -10,7 +10,8 @@ data class ProgrammingLanguages(@SerializedName("programming_languages") val pro
     BaseBlock() {
 
     @IgnoredOnParcel
-    override val blockType = BlockType.PROGRAMMING_LANGUAGES
+    override val blockType
+        get() = BlockType.PROGRAMMING_LANGUAGES
 }
 
 @Parcelize

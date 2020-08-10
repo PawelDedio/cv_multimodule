@@ -3,5 +3,7 @@
 
     <dimen name="image_circle_border_default">2dp</dimen>
 
-    <dimen name="profile_image_size">100dp</dimen>
+    <dimen name="home_profile_image_size">100dp</dimen>
+
+    <dimen name="home_name_margin_top">116dp</dimen>
 </resources>

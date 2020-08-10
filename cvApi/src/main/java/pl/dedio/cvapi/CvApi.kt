@@ -7,11 +7,10 @@ import retrofit2.http.Path
 
 interface CvApi {
 
-    @GET("{userName}/{gistId}/raw/{gistRawId}/{gistName}")
+    @GET("{userName}/{gistId}/raw/{gistName}")
     suspend fun getCvDetails(
         @Path("userName") userName: String,
         @Path("gistId") gistId: String,
-        @Path("gistRawId") gistRawId: String,
         @Path("gistName") gistName: String
     ): Response<CvApiModel>
 }

@@ -7,11 +7,12 @@ import org.threeten.bp.LocalDate
 
 @Parcelize
 data class BasicInformation(
-    @SerializedName("birthdate") val localDate: LocalDate,
+    @SerializedName("birthdate") val birthdate: LocalDate,
     @SerializedName("contact_number") val contactNumber: String,
     @SerializedName("city") val city: String
 ) : BaseBlock() {
 
     @IgnoredOnParcel
-    override val blockType = BlockType.LANGUAGES
+    override val blockType
+        get() = BlockType.BASIC_INFORMATION
 }

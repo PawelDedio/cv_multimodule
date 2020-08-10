@@ -5,4 +5,4 @@ import androidx.databinding.BindingAdapter
 import pl.dedio.cvmultimodule.bindingAdapters.loadImage
 
 @BindingAdapter("imageUrl")
-fun ImageView.loadImage(imageUrl: String) = loadImage(imageUrl)
+fun ImageView.loadImage(imageUrl: String?) = loadImage(imageUrl)

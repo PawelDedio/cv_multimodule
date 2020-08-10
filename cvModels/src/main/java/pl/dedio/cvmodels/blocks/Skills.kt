@@ -9,7 +9,8 @@ import kotlinx.android.parcel.Parcelize
 data class Skills(@SerializedName("skills") val skills: List<Skill>) : BaseBlock() {
 
     @IgnoredOnParcel
-    override val blockType = BlockType.SKILLS
+    override val blockType
+        get() = BlockType.SKILLS
 }
 
 @Parcelize

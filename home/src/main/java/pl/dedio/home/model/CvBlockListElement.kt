@@ -28,7 +28,7 @@ sealed class CvBlockListElement(val viewType: Int) {
 
     data class ExperienceCompanyProjectItem(
         val name: String,
-        val description: String,
+        val description: String?,
         val role: String,
         val googlePlayUrl: String?
     ) : CvBlockListElement(R.layout.cell_experience_company_project_item)
