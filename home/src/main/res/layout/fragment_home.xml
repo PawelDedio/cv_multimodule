@@ -111,6 +111,8 @@
             android:id="@+id/homeRecycler"
             style="@style/RecyclerDefault"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:clipToPadding="false"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
