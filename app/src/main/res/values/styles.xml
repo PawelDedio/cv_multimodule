@@ -9,11 +9,19 @@
 
     <!-- Layouts -->
     <style name="RootLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/mainBackground</item>
     </style>
 
     <style name="RootLayout.Cell">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingTop">@dimen/spacing_medium</item>
+        <item name="android:paddingBottom">@dimen/spacing_medium</item>
+        <item name="android:paddingStart">@dimen/spacing_medium</item>
+        <item name="android:paddingEnd">@dimen/spacing_medium</item>
     </style>
 
     <style name="CardView.Cell">
@@ -34,6 +42,14 @@
         <item name="android:textColor">@color/textBlack</item>
     </style>
 
+    <style name="TextBlack.SectionHeader" >
+        <item name="android:textSize">@dimen/text_size_section_header</item>
+    </style>
+
+    <style name="TextBlack.Paragraph" >
+        <item name="android:textSize">@dimen/text_size_paragraph</item>
+    </style>
+
     <style name="TextNeutral" parent="TextViewDefault">
         <item name="android:textColor">@color/textNeutral</item>
     </style>
@@ -51,5 +67,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <!-- Images -->
+    <style name="ImageDefault">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 </resources>

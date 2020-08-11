@@ -9,10 +9,23 @@
             type="pl.dedio.home.model.CvBlockListElement.ProgrammingLanguageItem" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/RootLayout.Cell"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/RootLayout.Cell">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/programmingLanguageLogo"
+            style="@style/ImageProgrammingLanguageLogo"
+            app:imageUrl="@{item.logoUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.durranilab.labprogresslayout.LabProgressLayout
+            android:id="@+id/programmingLanguageLevel"
+            style="@style/ProgressSkill"
+            android:layout_marginStart="@dimen/spacing_small"
+            app:layout_constraintBottom_toBottomOf="@id/programmingLanguageLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:progress="@{item.level}"
+            app:layout_constraintStart_toEndOf="@id/programmingLanguageLogo"
+            app:layout_constraintTop_toTopOf="@id/programmingLanguageLogo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

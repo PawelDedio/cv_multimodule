@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.fragment_home.*
 import pl.dedio.cvmultimodule.base.BaseFragment
 import pl.dedio.cvmultimodule.di.components.ActivityComponent
@@ -13,6 +14,7 @@ import pl.dedio.home.databinding.FragmentHomeBinding
 import pl.dedio.home.di.DaggerHomeComponent
 import javax.inject.Inject
 import javax.inject.Provider
+import kotlin.math.abs
 
 class HomeFragment : BaseFragment() {
 
@@ -45,6 +47,11 @@ class HomeFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        homeAppBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBar, offset ->
+            val alpha = abs(offset / appBar.totalScrollRange.toFloat())
+            homeToolbar.alpha = alpha
+        })
 
         viewModel.cvBlocks.observe {
             if(homeRecycler.adapter == null) {

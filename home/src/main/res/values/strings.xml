@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cell_basic_information_title">Basic information:</string>
+    <string name="cell_basic_information_birthdate_pattern">Birthdate: %s</string>
+    <string name="cell_basic_information_phone_pattern">Phone number: %s</string>
+    <string name="cell_basic_information_city_pattern">City: %s</string>
+
+    <string name="cell_experience_title">Experience:</string>
+    <string name="cell_experience_current_job_label">today</string>
+    <string name="cell_experience_company_title_pattern">%s - %s %s at %s</string>
+    <string name="cell_experience_company_projects_title">Projects:</string>
+
+    <string name="cell_experience_company_project_name_pattern">Name: %s</string>
+    <string name="cell_experience_company_project_description_pattern">Description: %s</string>
+    <string name="cell_experience_company_project_role_pattern">Role: %s</string>
+
+    <string name="cell_programming_languages_title">Known programming languages:</string>
+
+    <string name="cell_skills_title">Skills:</string>
+
+    <string name="cell_languages_title">Known languages:</string>
+</resources>

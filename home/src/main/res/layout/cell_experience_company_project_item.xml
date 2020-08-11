@@ -11,8 +11,37 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/RootLayout.Cell"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/experienceCompanyProjectName"
+            style="@style/TextBlack.Paragraph"
+            android:layout_width="0dp"
+            android:text="@{@string/cell_experience_company_project_name_pattern(item.name)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/experienceCompanyProjectDescription"
+            style="@style/TextBlack.Paragraph"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="@{@string/cell_experience_company_project_description_pattern(item.description)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/experienceCompanyProjectName"
+            app:visibleElseGone="@{item.hasDescription()}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/experienceCompanyProjectRole"
+            style="@style/TextBlack.Paragraph"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="@{@string/cell_experience_company_project_role_pattern(item.role)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/experienceCompanyProjectDescription" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

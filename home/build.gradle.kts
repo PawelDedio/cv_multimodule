@@ -60,4 +60,6 @@ dependencies {
     implementation(Libraries.ThreeTenABP.core)
 
     implementation(Libraries.CircleImageView.core)
+
+    implementation(Libraries.LabProgressLayout.core)
 }

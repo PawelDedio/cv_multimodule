@@ -6,4 +6,11 @@
     <dimen name="home_profile_image_size">100dp</dimen>
 
     <dimen name="home_name_margin_top">116dp</dimen>
+
+    <dimen name="company_logo_max_width">100dp</dimen>
+    <dimen name="company_logo_max_height">60dp</dimen>
+
+    <dimen name="programming_language_logo_size">60dp</dimen>
+    <dimen name="programming_language_progress_height">10dp</dimen>
+    <integer name="programming_language_progress_corner_radius">10</integer>
 </resources>

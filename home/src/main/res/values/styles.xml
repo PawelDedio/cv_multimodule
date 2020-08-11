@@ -7,8 +7,31 @@
         <item name="civ_border_color">@color/neutral</item>
     </style>
 
-    <style name="ProfileImage">
+    <style name="ImageProfile">
         <item name="android:layout_width">@dimen/home_profile_image_size</item>
         <item name="android:layout_height">@dimen/home_profile_image_size</item>
+    </style>
+
+    <style name="ImageCompanyLogo" parent="ImageDefault">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_width">@dimen/company_logo_max_width</item>
+        <item name="android:layout_height">@dimen/company_logo_max_height</item>
+    </style>
+
+    <style name="ImageProgrammingLanguageLogo" parent="ImageCompanyLogo">
+        <item name="android:layout_width">@dimen/programming_language_logo_size</item>
+        <item name="android:layout_height">@dimen/programming_language_logo_size</item>
+    </style>
+
+    <!-- Progresses -->
+    <style name="ProgressSkill">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/programming_language_progress_height</item>
+        <item name="autoProgress">false</item>
+        <item name="maxProgress">100</item>
+        <item name="emptyColor">@color/progressEmpty</item>
+        <item name="loadedColor">@color/progressFilled</item>
+        <item name="cornerRadius">@integer/programming_language_progress_corner_radius</item>
     </style>
 </resources>

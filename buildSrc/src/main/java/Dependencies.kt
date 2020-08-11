@@ -269,4 +269,13 @@ object Libraries {
 
         const val core = "de.hdodenhof:circleimageview:${Versions.circleImageView}"
     }
+
+    //https://github.com/durranilab/LabProgressLayout Custom progress layout
+    object LabProgressLayout {
+        object Versions {
+            const val labProgressLayout = "1.0"
+        }
+
+        const val core = "com.durranilab:LabProgress:${Versions.labProgressLayout}"
+    }
 }

@@ -12,11 +12,10 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         style="@style/RootLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:background="@color/lightGrey">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/homeAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -29,7 +28,7 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/homeProfileImage"
-                    style="@style/ProfileImage"
+                    style="@style/ImageProfile"
                     android:layout_gravity="top|center_horizontal"
                     android:layout_marginTop="@dimen/spacing_small"
                     app:imageUrl="@{viewModel.cvData.photoUrl}"
@@ -64,48 +63,48 @@
                         app:visibleElseGone="@{viewModel.cvData.hasCurrentPosition()}"
                         tools:text="Android Developer at Test Company" />
                 </LinearLayout>
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/homeToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentInsetStart="0dp"
-                android:contentInsetLeft="0dp"
-                app:contentInsetLeft="0dp"
-                app:contentInsetStart="0dp"
-                app:layout_collapseMode="pin">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/homeToolbarToolbarLayout"
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/homeToolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize">
+                    android:layout_height="wrap_content"
+                    android:contentInsetStart="0dp"
+                    android:contentInsetLeft="0dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/homeToolbarImage"
-                        style="@style/ImageCircleDefault"
-                        android:layout_width="?attr/actionBarSize"
-                        android:layout_height="?attr/actionBarSize"
-                        android:layout_marginStart="@dimen/spacing_small"
-                        android:padding="@dimen/spacing_xxxsmall"
-                        app:imageUrl="@{viewModel.cvData.photoUrl}"
-                        app:layout_constraintBottom_toBottomOf="@id/homeToolbarTitle"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/homeToolbarTitle" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/homeToolbarToolbarLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/homeToolbarTitle"
-                        style="@style/TextNeutral.ToolbarTitle"
-                        android:layout_width="0dp"
-                        android:layout_marginStart="@dimen/spacing_small"
-                        android:layout_marginEnd="@dimen/spacing_medium"
-                        android:text="@{viewModel.cvData.name}"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/homeToolbarImage"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.appcompat.widget.Toolbar>
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/homeToolbarImage"
+                            style="@style/ImageCircleDefault"
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:padding="@dimen/spacing_xxxsmall"
+                            app:imageUrl="@{viewModel.cvData.photoUrl}"
+                            app:layout_constraintBottom_toBottomOf="@id/homeToolbarTitle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/homeToolbarTitle" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/homeToolbarTitle"
+                            style="@style/TextNeutral.ToolbarTitle"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:layout_marginEnd="@dimen/spacing_medium"
+                            android:text="@{viewModel.cvData.name}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/homeToolbarImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView

@@ -12,8 +12,6 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/RootLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         tools:context=".main.MainActivity">
 
         <fragment

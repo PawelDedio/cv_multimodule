@@ -2,10 +2,15 @@ package pl.dedio.home.model
 
 import pl.dedio.cvmodels.blocks.*
 import pl.dedio.cvmultimodule.util.DateFormatter
+import pl.dedio.cvmultimodule.util.ResourceRepository
+import pl.dedio.home.R
 import java.lang.IllegalStateException
 import javax.inject.Inject
 
-class CvBlockListElementMapper @Inject constructor(private val dateFormatter: DateFormatter) {
+class CvBlockListElementMapper @Inject constructor(
+    private val dateFormatter: DateFormatter,
+    private val resourceRepository: ResourceRepository
+) {
 
     fun mapBlocks(blocks: List<BaseBlock>): List<CvBlockListElement> {
         return blocks.map { mapBlock(it) }
@@ -35,19 +40,24 @@ class CvBlockListElementMapper @Inject constructor(private val dateFormatter: Da
     private fun List<Company>.toCompaniesListElements() = map {
         val readableStartedAt = dateFormatter.toReadableForm(it.startedAt)
         val readableFinishedAt = if (it.finishedAt == null) {
-            null
+            resourceRepository.getString(R.string.cell_experience_current_job_label)
         } else {
             dateFormatter.toReadableForm(it.finishedAt!!)
         }
 
-        val projects = it.projects.toProjectsListElements()
-
-        CvBlockListElement.ExperienceCompanyItem(
-            it.name,
-            it.companyLogoUrl,
+        val title = resourceRepository.getString(
+            R.string.cell_experience_company_title_pattern,
             readableStartedAt,
             readableFinishedAt,
             it.positionName,
+            it.name
+        )
+
+        val projects = it.projects.toProjectsListElements()
+
+        CvBlockListElement.ExperienceCompanyItem(
+            it.companyLogoUrl,
+            title,
             projects
         )
     }
@@ -68,7 +78,7 @@ class CvBlockListElementMapper @Inject constructor(private val dateFormatter: Da
     }
 
     private fun List<Language>.toLanguagesListElements() = map {
-        CvBlockListElement.LanguageItem(it.name, it.level)
+        CvBlockListElement.LanguageItem(it.name, it.level.toIntLevel())
     }
 
     private fun ProgrammingLanguages.toListElement(): CvBlockListElement.ProgrammingLanguages {
@@ -78,7 +88,7 @@ class CvBlockListElementMapper @Inject constructor(private val dateFormatter: Da
     }
 
     private fun List<ProgrammingLanguage>.toProgrammingLanguagesListElement() = map {
-        CvBlockListElement.ProgrammingLanguageItem(it.name, it.level, it.logoUrl)
+        CvBlockListElement.ProgrammingLanguageItem(it.name, it.level.toIntLevel(), it.logoUrl)
     }
 
     private fun Skills.toListElement(): CvBlockListElement.Skills {
@@ -88,6 +98,8 @@ class CvBlockListElementMapper @Inject constructor(private val dateFormatter: Da
     }
 
     private fun List<Skill>.toSkillsListElement() = map {
-        CvBlockListElement.SkillItem(it.name, it.level)
+        CvBlockListElement.SkillItem(it.name, it.level.toIntLevel())
     }
+
+    private fun Float.toIntLevel() = (this * 100).toInt()
 }

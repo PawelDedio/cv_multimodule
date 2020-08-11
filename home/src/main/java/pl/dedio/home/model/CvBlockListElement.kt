@@ -18,11 +18,8 @@ sealed class CvBlockListElement(val viewType: Int) {
         CvBlockListElement(R.layout.cell_experience)
 
     data class ExperienceCompanyItem(
-        val name: String,
         val companyLogoUrl: String,
-        val startedAt: String,
-        val finishedAt: String?,
-        val positionName: String,
+        val title: String,
         val projects: List<ExperienceCompanyProjectItem>
     ) : CvBlockListElement(R.layout.cell_experience_company_item)
 
@@ -31,14 +28,16 @@ sealed class CvBlockListElement(val viewType: Int) {
         val description: String?,
         val role: String,
         val googlePlayUrl: String?
-    ) : CvBlockListElement(R.layout.cell_experience_company_project_item)
+    ) : CvBlockListElement(R.layout.cell_experience_company_project_item) {
+        fun hasDescription() = description != null
+    }
 
     data class Languages(val languages: List<LanguageItem>) :
         CvBlockListElement(R.layout.cell_languages)
 
     data class LanguageItem(
         val name: String,
-        val level: Float
+        val level: Int
     ) : CvBlockListElement(R.layout.cell_language_item)
 
     data class ProgrammingLanguages(val languages: List<ProgrammingLanguageItem>) :
@@ -46,7 +45,7 @@ sealed class CvBlockListElement(val viewType: Int) {
 
     data class ProgrammingLanguageItem(
         val name: String,
-        val level: Float,
+        val level: Int,
         val logoUrl: String
     ) : CvBlockListElement(R.layout.cell_programming_language_item)
 
@@ -55,6 +54,6 @@ sealed class CvBlockListElement(val viewType: Int) {
 
     data class SkillItem(
         val name: String,
-        val level: Float
+        val level: Int
     ) : CvBlockListElement(R.layout.cell_skill_item)
 }
