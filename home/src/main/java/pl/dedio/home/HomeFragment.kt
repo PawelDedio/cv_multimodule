@@ -54,7 +54,7 @@ class HomeFragment : BaseFragment() {
         })
 
         viewModel.cvBlocks.observe {
-            if(homeRecycler.adapter == null) {
+            if (homeRecycler.adapter == null) {
                 adapter = adapterProvider.get().apply {
                     homeAdapterProvider = adapterProvider
                 }
@@ -63,6 +63,10 @@ class HomeFragment : BaseFragment() {
             }
 
             adapter.submitList(it)
+        }
+
+        viewModel.error.observe {
+            showSnackBar(it.message, it.buttonText, it.buttonAction, homeRootLayout)
         }
     }
 }

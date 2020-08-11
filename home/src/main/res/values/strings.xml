@@ -19,4 +19,6 @@
     <string name="cell_skills_title">Skills:</string>
 
     <string name="cell_languages_title">Known languages:</string>
+
+    <string name="cv_request_error_try_again_button">Try again</string>
 </resources>

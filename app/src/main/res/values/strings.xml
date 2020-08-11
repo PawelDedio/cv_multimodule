@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CV multimodule</string>
+
+    <string name="error_message_api_exception">Cannot load data, api returned %d code</string>
+    <string name="error_message_no_internet">No internet connection</string>
+    <string name="error_message_unknown">Unknown exception: %s</string>
 </resources>
