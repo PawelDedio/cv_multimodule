@@ -2,6 +2,7 @@ package pl.dedio.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import pl.dedio.cvmodels.CvUiModel
 import pl.dedio.cvmultimodule.BuildConfig
@@ -48,6 +49,7 @@ class HomeViewModel @Inject constructor(
                     BuildConfig.GIST_ID,
                     BuildConfig.GIST_NAME
                 )
+                
                 loadCvDetailsUseCase.execute(params)
             }.onSuccess {
                 _cvData.value = it

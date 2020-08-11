@@ -115,5 +115,20 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:paddingBottom="@dimen/spacing_medium"
             android:clipToPadding="false"/>
+
+        <pl.dedio.cvmultimodule.view.OverlayView
+            android:id="@+id/loginProgressBar"
+            style="@style/DefaultOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:visibleElseGone="@{viewModel.isLoading}"
+            tools:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </pl.dedio.cvmultimodule.view.OverlayView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
