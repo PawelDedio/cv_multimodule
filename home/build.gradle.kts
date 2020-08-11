@@ -62,4 +62,10 @@ dependencies {
     implementation(Libraries.CircleImageView.core)
 
     implementation(Libraries.LabProgressLayout.core)
+
+    testImplementation(Libraries.JUnit.core)
+    testImplementation(Libraries.JUnit.engine)
+    testImplementation(Libraries.Kotlin.reflect)
+    testImplementation(Libraries.Coroutines.test)
+    testImplementation(Libraries.Mockk.core)
 }
