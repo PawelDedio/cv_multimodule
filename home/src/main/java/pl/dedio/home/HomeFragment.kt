@@ -8,8 +8,8 @@ import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.fragment_home.*
 import pl.dedio.cvmultimodule.base.BaseFragment
 import pl.dedio.cvmultimodule.di.components.ActivityComponent
+import pl.dedio.cvmultimodule.extension.getActivityScopedViewModel
 import pl.dedio.cvmultimodule.extension.getBinding
-import pl.dedio.cvmultimodule.extension.getViewModel
 import pl.dedio.home.databinding.FragmentHomeBinding
 import pl.dedio.home.di.DaggerHomeComponent
 import javax.inject.Inject
@@ -29,7 +29,7 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun initViewModel() {
-        viewModel = getViewModel()
+        viewModel = getActivityScopedViewModel()
     }
 
     override fun onCreateView(

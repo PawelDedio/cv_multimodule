@@ -26,6 +26,10 @@ inline fun <reified T : BaseViewModel> BaseFragment.getViewModel(
     factory: ViewModelProvider.Factory = viewModelFactory
 ) = ViewModelProvider(this, factory).get(T::class.java)
 
+inline fun <reified T : BaseViewModel> BaseFragment.getActivityScopedViewModel(
+    factory: ViewModelProvider.Factory = viewModelFactory
+) = ViewModelProvider(requireActivity(), factory).get(T::class.java)
+
 fun <DataBinding : ViewDataBinding> Fragment.getBinding(
     viewModel: ViewModel,
     layoutId: Int,
